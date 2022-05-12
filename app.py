@@ -43,7 +43,7 @@ gaits = ['Walking', 'Trotting', 'Pacing', 'Galloping']
 gait_behaviors = [b for b in dfsubset if any(xb in b for xb in gaits)]
 
 def calc_steps(data, dog, gaits, distance):
-    dfdoggait = data.loc[(data['DogID_TestNum']==dogID) & (data['Behavior'].isin([gaits]))]
+    dfdoggait = data.loc[(data['DogID_TestNum']==dog) & (data['Behavior'].isin([gaits]))]
     
     x = dfdoggait['t_sec'].reset_index(drop=True)
     y = dfdoggait['ANeck_RMS'].reset_index(drop=True)
